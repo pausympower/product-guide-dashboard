@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sympower · Commercial Product Qualifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d2b2b;--ink2:#3a5654;--paper:#f4f1e9;--card:#fff;--line:#dcd6c8;--petrol:#0f5c56;--petrol-d:#0a423e;
+--go:#1b7f5c;--cond:#c98a12;--no:#a83c3c;--parked:#6b6b6b;--emerg:#3e6da6;--t1:#0f5c56;--t2:#c98a12;--t3:#7d8a88;}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:20}
+.head{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0 14px;flex-wrap:wrap;gap:8px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.brand small{display:block;font-weight:500;font-size:12px;color:var(--ink2)}
+.src{font-size:11px;color:var(--ink2);text-align:right}.src b{font-family:'IBM Plex Mono',monospace}
+.disc{font-size:11px;color:var(--ink2);max-width:330px;text-align:right;margin-top:4px}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tab{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:12px 18px;cursor:pointer;border:none;background:none;color:var(--ink2);border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--ink);border-color:var(--petrol)}
+main{padding:26px 0 60px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--petrol);margin:0 0 6px}
+h2{font-family:'Space Grotesk',sans-serif;font-size:20px;margin:0 0 4px}.sub{color:var(--ink2);font-size:13px;margin:0 0 16px}
+.seg{display:inline-flex;border:1.5px solid var(--ink);border-radius:2px;overflow:hidden;margin-bottom:16px}
+.seg button{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:7px 16px;border:none;background:var(--card);cursor:pointer;color:var(--ink)}
+.seg button.on{background:var(--ink);color:var(--paper)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:8px 16px;border:1.5px solid var(--ink);background:var(--card);cursor:pointer;border-radius:2px}
+.chip.on{background:var(--ink);color:var(--paper)}
+.form{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--petrol);padding:20px;margin-bottom:22px}
+.field{margin-bottom:16px}.field label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;margin-bottom:6px}
+.field .hint{font-weight:400;color:var(--ink2);font-size:11px}
+select,textarea{width:100%;font-family:Inter,sans-serif;font-size:14px;padding:9px 10px;border:1px solid var(--line);background:#fff;border-radius:2px}
+textarea{min-height:88px;resize:vertical}
+.multi{display:flex;flex-wrap:wrap;gap:6px;padding:8px;border:1px solid var(--line);background:#fff;border-radius:2px}
+.opt{font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:14px;cursor:pointer;background:#faf8f2}
+.opt.on{background:var(--petrol);color:#fff;border-color:var(--petrol)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check-btn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;padding:12px 26px;background:var(--petrol);color:#fff;border:none;cursor:pointer;border-radius:2px}
+.check-btn:hover{background:var(--petrol-d)}.check-btn:disabled{opacity:.5;cursor:wait}
+.eg{font-size:12px;color:var(--ink2);margin:6px 0 0}.eg a{color:var(--petrol);cursor:pointer;text-decoration:underline}
+.verdict{border:1px solid var(--line);background:var(--card);margin-bottom:22px;overflow:hidden}
+.vhead{padding:18px 22px;color:#fff;display:flex;align-items:center;gap:16px}
+.vhead.go{background:var(--go)}.vhead.cond{background:var(--cond)}.vhead.no{background:var(--no)}.vhead.parked{background:var(--parked)}.vhead.emerg{background:var(--emerg)}
+.vmark{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;line-height:1}
+.vtitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700}.vtitle small{display:block;font-weight:500;font-size:12px;opacity:.9}
+.vbody{padding:16px 22px}.vbody ul{margin:0;padding-left:18px;font-size:13px}.vbody li{margin-bottom:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pc{border:1px solid var(--line);background:var(--card);border-top:4px solid var(--t3);padding:14px 16px}
+.pc.t1{border-top-color:var(--t1)}.pc.t2{border-top-color:var(--t2)}.pc.t3{border-top-color:var(--t3)}.pc.parked{border-top-color:var(--parked);opacity:.9}.pc.emerg{border-top-color:var(--emerg)}
+.pc .pid{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink2)}
+.pc .tier{float:right;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;padding:2px 8px;border-radius:2px;color:#fff}
+.tier.t1{background:var(--t1)}.tier.t2{background:var(--t2)}.tier.t3{background:var(--t3)}.tier.parked{background:var(--parked)}.tier.emerg{background:var(--emerg)}
+.pc h3{font-family:'Space Grotesk',sans-serif;font-size:15px;margin:6px 0 8px}
+.pc .kv{font-size:12px;margin:3px 0;color:var(--ink2)}.pc .kv b{color:var(--ink);font-weight:600}
+.pc .conf{display:inline-block;font-size:11px;font-weight:600;margin-top:8px}
+.empty{padding:26px;text-align:center;color:var(--ink2);border:1px dashed var(--line);font-size:14px}
+.ai-note{font-size:11px;color:var(--ink2);margin-top:8px;font-style:italic}
+footer{border-top:1px solid var(--line);padding:18px 0;font-size:11px;color:var(--ink2)}
+@media(max-width:720px){.grid,.row2{grid-template-columns:1fr}.disc,.src{text-align:left;max-width:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="head">
+  <div class="brand">Product Qualifier <small>Commercial menu · what we can deliver, where, and how aligned</small></div>
+  <div><div class="src" id="src">data: loading…</div>
+   <div class="disc">Product-axis screening only. T&amp;O caps &amp; risk guardrails not yet applied — verdicts are provisional.</div></div>
+ </div>
+ <div class="tabs">
+  <button class="tab on" data-mode="check">Check an opportunity</button>
+  <button class="tab" data-mode="browse">Browse by country</button>
+ </div>
+</div></header>
+<main class="wrap">
+ <section id="check">
+  <p class="eyebrow">Opportunity screening</p>
+  <h2>Can we deliver this — and does it fit our focus?</h2>
+  <p class="sub">Fill in the fields, or just describe the deal in your own words.</p>
+  <div class="seg"><button class="on" data-sub="guided">Guided</button><button data-sub="describe">Describe it</button></div>
+
+  <div id="guided" class="form">
+   <div class="row2">
+    <div class="field"><label>Country</label><select id="f-geo"></select></div>
+    <div class="field"><label>Asset type</label><select id="f-asset"></select></div>
+   </div>
+   <div class="field"><label>Market programs the customer wants <span class="hint">pick any that apply</span></label><div class="multi" id="f-prog"></div></div>
+   <div class="row2">
+    <div class="field"><label>Who holds market access (BRP)? <span class="hint">optional</span></label>
+     <select id="f-brp"><option value="">— no preference —</option><option value="sympower">Sympower acts as BRP / BSP</option><option value="partner">Customer / partner brings own BRP</option></select></div>
+    <div class="field"><label>&nbsp;</label><button class="check-btn" id="go">Check deliverability</button></div>
+   </div>
+  </div>
+
+  <div id="describe" class="form" style="display:none">
+   <div class="field"><label>Describe the opportunity <span class="hint">country, asset, size, markets, who holds the BRP…</span></label>
+    <textarea id="f-text" placeholder="e.g. Customer has a 60 MW BESS in Sweden, holds their own BRP, wants FCR-D and wholesale trading."></textarea>
+    <p class="eg">Try: <a data-eg="Customer has a 60 MW BESS in Sweden, holds their own BRP, wants FCR-D and wholesale trading.">Sweden BESS + own BRP</a> · <a data-eg="A greenhouse in Finland with e-boilers, ~10 MW, wants to join mFRR.">Finland e-boiler mFRR</a> · <a data-eg="Battery project in Romania, 40 MW, customer asking what markets we can do.">Romania BESS</a></p>
+    <button class="check-btn" id="go-ai" style="margin-top:12px">Ask</button>
+   </div>
+  </div>
+  <div id="result"></div>
+ </section>
+
+ <section id="browse" style="display:none">
+  <p class="eyebrow">Catalogue</p>
+  <h2>What we offer, by country</h2>
+  <p class="sub">Grouped by strategic tier. Tier 1 = principal focus. Emerging = exploratory. Parked = not current products.</p>
+  <div class="chips" id="geo-chips"></div>
+  <div id="browse-grid"></div>
+ </section>
+</main>
+<footer><div class="wrap">Deterministic matching against the Product Catalog. Free-text mode is grounded strictly in the catalogue and always shows the real matched rows so results can be verified. Product readiness only until the T&amp;O guide is layered in.</div></footer>
+<script>
+// ---------- CONFIG ----------
+const CONFIG={
+  catalogUrl:"",   // production: "/api/catalog" (Vercel serverless reader). Empty = use embedded snapshot below.
+  qualifyUrl:"",   // production: "/api/qualify" (Anthropic proxy). Empty = call Anthropic directly (works inside Claude only).
+  snapshotDate:"catalogue snapshot"
+};
+const FALLBACK = [{"tier": "1.0", "pid": "FI-BESS-001", "geo": "Finland", "assetType": "BESS", "asset": "", "size": "≤2-100+", "control": "Wolf Cloud / Wolf Local", "programs": "MMO across mFRR capacity and EAM, FCR-D, FCR-N, Day Ahead and Intra-Day", "trading": "Sympower BRP (automated)", "dataFlows": "in place", "market": "✅ Sympower BRP active", "toCapacity": "", "infraRisk": "Stage 1", "tradeRisk": "Stage 1", "effort": "S", "perMW": "", "strategic": "", "goLive": "Q2 2026", "risks": "", "confidence": "✅ High", "notes": "Core commercial product; proven automated operation"}, {"tier": "1.0", "pid": "FI-BESS-002", "geo": "Finland", "assetType": "BESS", "asset": "", "size": "≤2-100+", "control": "Wolf + Cloud", "programs": "MMO across mFRR capacity and EAM, aFRR capacity and EAM, FCR-D, FCR-N, Day Ahead and Intra-Day", "trading": "Sympower BRP (automated)", "dataFlows": "To add:\nSee trading / wholesale roadmap", "market": "✅ Sympower BRP active", "toCapacity": "", "infraRisk": "Stage 4", "tradeRisk": "Stage 4", "effort": "XL", "perMW": "5.0", "strategic": "5.0", "goLive": "Q4 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Core commercial product; proven automated operation"}, {"tier": "3.0", "pid": "FI-BESS-003", "geo": "Finland", "assetType": "BESS", "asset": "", "size": "≤2-100+", "control": "Wolf Cloud / Wolf Local", "programs": "Asset management for FCR-D Up/Down, FCR-N, mFRR Up/Down", "trading": "Partner BRP", "dataFlows": "None", "market": "Entelios (Hansen)", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "S", "perMW": "", "strategic": "", "goLive": "Q3 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Setup similar to the one we had originally with NW. However, Fingrid does not allow managing SoC through imbalance directly, therefore this is not a commercial product unless the BRP has ID/DA capabilities to manage SoC or wants to do very basic SoC management on the ancillary markets without optimizing battery revenue. Additinally, it requires a BRP integration if not Entelios."}, {"tier": "3.0", "pid": "FI-BESS-004", "geo": "Finland", "assetType": "BESS", "asset": "", "size": "≤2-100+", "control": "Wolf Cloud / Wolf Local", "programs": "Asset management for FCR-D Up/Down, FCR-N, mFRR Up/Down, DA/ID", "trading": "Partner BRP", "dataFlows": "None", "market": "Entelios (Hansen)", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "NA", "risks": "DA/ID viability via Hansen unclear", "confidence": "⚠️ Medium", "notes": "Requires BRP integration if not Entelios"}, {"tier": "X", "pid": "FI-BESS-005", "geo": "Finland", "assetType": "BESS", "asset": "multiple BESS vendors", "size": "1-100+", "control": "Wolf Local", "programs": "Optimized FCR-D Up/Down, FCR-N, mFRR Up/Down\n\n(ID for SoC Management)", "trading": "Sympower", "dataFlows": "To add:\n- New integrations for the TaaS setup", "market": "BRP (Bixia, Entelios, etc.)", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "XL", "perMW": "", "strategic": "", "goLive": "H1 2027", "risks": "Hansen's capabilities to support scenarios\nAgreements between BRPs and Hansen's need at least validation to allow for viable operation\nAgreements on how SP can trade through a BRP (on their books) on ID/DA", "confidence": "🧭 Low", "notes": "We don't have a technical solution or plan for achieving MM Optimization through a BRP integration, Hansen or other. Hansen and BRPs have lmitations."}, {"tier": "2.0", "pid": "FI-CI-001", "geo": "Finland", "assetType": "C&I", "asset": "Greenhouse lights, ovens", "size": "1-25", "control": "Wolf + Cloud", "programs": "FCR-D Up/Down (old and new), mFRR Up/Down", "trading": "Sympower BSP", "dataFlows": "To add: Forecasts, Flexportal for bidding, activation signals", "market": "Sympower directly to Fingrid through Tieto\nEntelios as BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "Market saturation. \nSize needs to be above minimum bid requirement to avoid aggregation", "confidence": "✅ High", "notes": ""}, {"tier": "2.0", "pid": "FI-CI-002", "geo": "Finland", "assetType": "C&I", "asset": "e-boilers", "size": "", "control": "Wolf + Cloud", "programs": "mFRR Up/Down", "trading": "Partner BRP", "dataFlows": "", "market": "", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "Every customer needs some customization, thus increasing integration cost", "confidence": "⚠️ Medium", "notes": "Highly dependant on the availability schedules"}, {"tier": "2.0", "pid": "FI-CI-003", "geo": "FInland", "assetType": "C&I", "asset": "data centers", "size": "50+", "control": "Wolf + Cloud", "programs": "mFRR Up/Down", "trading": "Sympower", "dataFlows": "", "market": "Sympower or Partner BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "", "risks": "", "confidence": "", "notes": ""}, {"tier": "1.0", "pid": "FI-CI-004", "geo": "Finland", "assetType": "C&I", "asset": "Greenhouse lights, ovens, e-boilers, data centers", "size": "", "control": "Wolf + Cloud", "programs": "Symbalance", "trading": "Partner BRP/DSO", "dataFlows": "", "market": "", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "Q3 2026", "risks": "Scaling to each BRP/DSO requests, physical access to connect the resources", "confidence": "⚠️ Medium", "notes": "V1 in progress, V2 and V3 outlined\nPotential to get 7M yearly in Finland net revenue. Oscar to build 3 year business case"}, {"tier": "3.0", "pid": "FI-RES-001", "geo": "Finland", "assetType": "RES", "asset": "wind", "size": "n/a", "control": "Cloud", "programs": "FCR-D Down", "trading": "Partner BRP", "dataFlows": "To add:activation signals", "market": "", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "S", "perMW": "", "strategic": "", "goLive": "Q3 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Future potential; not yet prequalified"}, {"tier": "3.0", "pid": "FI-RES-002", "geo": "Finland", "assetType": "RES", "asset": "wind", "size": "n/a", "control": "Cloud", "programs": "FCR-D Down", "trading": "Sympower BRP", "dataFlows": "To add: Forecasts, Flexportal for bidding, activation signals", "market": "", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q3 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Future potential; not yet prequalified"}, {"tier": "1.0", "pid": "SE-BESS-001", "geo": "Sweden", "assetType": "BESS", "asset": "multiple BESS vendors", "size": "1–100+", "control": "Enformer / Local", "programs": "Asset Management: FCR-D Up/Down, FCR-N, mFRR Up/Down, Wholesale (DA / ID)", "trading": "Partner BRP/Customer (e.g. Ingrid Capacity)", "dataFlows": "utilize Bidding API, Schedules\nMarket access through Hansen\nValue stacking", "market": "Entelios \nMälarenergi \nJämtkraft", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "", "confidence": "✅ High", "notes": "A new BRP requires a new integration done by P&T"}, {"tier": "1.0", "pid": "SE-BESS-002", "geo": "Sweden", "assetType": "BESS", "asset": "multiple BESS vendors", "size": "1–100+", "control": "Enformer / Local", "programs": "FCR-D Up/Down, FCR-N, mFRR Up/Down, Wholesale (DA / ID)", "trading": "Partner BRP/Customer", "dataFlows": "utilize DirectFlex", "market": "Modity (could be used by anyone)", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "", "confidence": "✅ High", "notes": "If DirectFlex is used, \"we have out of the box functionality\""}, {"tier": "1.0", "pid": "SE-BESS-003", "geo": "Sweden", "assetType": "BESS", "asset": "multiple BESS vendors", "size": "1–100+", "control": "Enformer / Local", "programs": "Optimized FCR-D Up/Down, FCR-N, mFRR Up/Down\n\n(ID for SoC Management)", "trading": "Sympower BRP", "dataFlows": "To add:\n- Update wholesale ETRM for Sweden\n- Entity model supporting Enformer as part of Trading \n- Sending SoC data to Sympower platform", "market": "✅ Sympower BRP active", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "L", "perMW": "", "strategic": "", "goLive": "Q3 2026", "risks": "Resource limitations as Finland will be given priority during H1.", "confidence": "⚠️ Medium", "notes": ""}, {"tier": "X", "pid": "SE-BESS-004", "geo": "Sweden", "assetType": "BESS", "asset": "multiple BESS vendors", "size": "1–100+", "control": "Enformer / Local", "programs": "Optimized FCR-D Up/Down, FCR-N, mFRR Up/Down\n\n(ID for SoC Management)", "trading": "Sympower", "dataFlows": "To add:\n- Update wholesale ETRM for Sweden\n- Entity model supporting Enformer as part of Trading \n- Sending SoC data to Sympower platform\n- Update platform to support T&O workflows in this new setup\n- New integrations for the TaaS setup", "market": "BRP (Bixia, Entelios, etc.)", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "XL", "perMW": "", "strategic": "", "goLive": "H1 2027", "risks": "Hansen's capabilities to support scenarios\nAgreements between BRPs and Hansen's need at least validation to allow for viable operation\nAgreements on how SP can trade through a BRP (on their books) on ID/DA", "confidence": "🧭 Low", "notes": "We don't have a technical solution or plan for achieving MM Optimization through a BRP integration, Hansen or other. Hansen and BRPs have lmitations."}, {"tier": "1.0", "pid": "SE-CI-001", "geo": "Sweden", "assetType": "C&I", "asset": "", "size": "n/a", "control": "Wolf + Cloud", "programs": "FCR-D Up/down, MFRR Up /Down", "trading": "Partner BRP", "dataFlows": "utilize Sympower->Bixia integrations", "market": "Bixia", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "Bid submission only in front end hansen web. Activations automatic", "confidence": "✅ High", "notes": "Only feasible for load reduction (e.g. paper mills)"}, {"tier": "1.0", "pid": "SE-CI-002", "geo": "Sweden", "assetType": "C&I", "asset": "", "size": "n/a", "control": "Wolf + Cloud", "programs": "FCR-D Up/down", "trading": "Sympower", "dataFlows": "utilize Sympower->Vattenfall integrations", "market": "Vattenfall", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "--", "perMW": "", "strategic": "", "goLive": "Available", "risks": "", "confidence": "✅ High", "notes": "Only feasible for load reduction (e.g. paper mills)"}, {"tier": "2.0", "pid": "SE-CI-003", "geo": "Sweden", "assetType": "C&I", "asset": "", "size": "n/a", "control": "Wolf + Cloud", "programs": "mFRR up/Down", "trading": "Sympower", "dataFlows": "utilize Sympower->Tieto->Hansen/Entelios", "market": "Entelios", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "S", "perMW": "", "strategic": "", "goLive": "Q4 2025", "risks": "", "confidence": "✅ High", "notes": "Only feasible for load reduction (e.g. paper mills)"}, {"tier": "3.0", "pid": "SE-CI-004", "geo": "Sweden", "assetType": "C&I", "asset": "", "size": "n/a", "control": "Wolf + Cloud", "programs": "FCR-N,\nFCR-D Up/Down, \nmFRR Up/Down", "trading": "Partner BRP", "dataFlows": "", "market": "", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "Q2 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Only feasible for load reduction (e.g. paper mills)"}, {"tier": "1.0", "pid": "SE-CI-005", "geo": "Sweden", "assetType": "C&I", "asset": "e-boilers", "size": "", "control": "Wolf + Cloud", "programs": "", "trading": "", "dataFlows": "", "market": "", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "", "risks": "", "confidence": "", "notes": ""}, {"tier": "1.0", "pid": "SE-RES-001", "geo": "Sweden", "assetType": "RES", "asset": "Wind", "size": "20-50", "control": "Wolf + Cloud", "programs": "mFRR Down (manual, schedules from the Wind customer)", "trading": "Sympower", "dataFlows": "API for receiving mFRR schedules", "market": "Tieto - BRP Hansen - Entelios", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "S", "perMW": "1.0", "strategic": "3.0", "goLive": "N/A", "risks": "", "confidence": "⚠️ Medium", "notes": "Incremental gaps across all dimensions. Risk, however, is lower due to RES, mFRR down only, and less imbalance requirements.\nTalk to Rosario as to why this was not successful"}, {"tier": "2.0", "pid": "SE-RES-002", "geo": "Sweden", "assetType": "RES", "asset": "Wind", "size": "20-50", "control": "Wolf + Cloud", "programs": "mFRR, ID, DA", "trading": "Sympower", "dataFlows": "To add: \nProduction Plans & Forecasts\nOptimization algos for wind", "market": "Sympower BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "2027.0", "risks": "", "confidence": "Low", "notes": ""}, {"tier": "2.0", "pid": "SE-BRP-001", "geo": "Sweden", "assetType": "BRP Platform", "asset": "BRP platform", "size": "N/A", "control": "Enformer / Local", "programs": "Asset Management: FCR-D Up/Down, FCR-N, mFRR Up/Down, Wholesale (DA / ID)", "trading": "BRP", "dataFlows": "", "market": "BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "--", "risks": "", "confidence": "", "notes": ""}, {"tier": "2.0", "pid": "NO-BESS-001", "geo": "Norway", "assetType": "BESS", "asset": "", "size": "1–100+", "control": "Enformer / Local", "programs": "Asset Management: FCR-D Up/Down, FCR-N, mFRR Up/Down, Wholesale (DA / ID)", "trading": "Partner BRP", "dataFlows": "utilize Bidding API, Schedules", "market": "Entelios (Hansen)", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q2 2026", "risks": "No FCR-D market in Norway. Current min mFRR volume is 5 MW\n\nDA/ID viability via Entelios through Hansen is still unclear and need validation.", "confidence": "⚠️ Medium", "notes": "Asset management only"}, {"tier": "2.0", "pid": "NO-CI-001", "geo": "Norway", "assetType": "C&I", "asset": "?", "size": "50-150", "control": "Wolf / Wolf Local (FFR)", "programs": "mfrr up/down , FFR", "trading": "Partner BRP", "dataFlows": "utilize Sympower-Tieto-Hansen/Entelios", "market": "Entelios (Hansen)", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q4 2025", "risks": "Norway Entelios portfolio", "confidence": "⚠️ Medium", "notes": "Paper, data centers feasible; no market stacking"}, {"tier": "X", "pid": "NO-BESS-002", "geo": "Norway", "assetType": "BESS", "asset": "", "size": "1–100+", "control": "Enformer / Local", "programs": "FCR-D Up/Down, FCR-N, mFRR Up/Down\nSoC Management on imbalance", "trading": "Sympower BSP", "dataFlows": "To add: Schedules, Production Plans, Forecasts", "market": "Entelios (Hansen)", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q4 2026", "risks": "Norway BSP implementation timeline is a blocker", "confidence": "🧭 Low", "notes": "Manual only; automation not planned in 2025/2026 including MMO\nNot in scope currently after speaking with Gunnar June 2026. Will come at some point but commercial not chasing opportunities at the moment"}, {"tier": "2.0", "pid": "NO-CI-002", "geo": "Norway", "assetType": "C&I", "asset": "Data centers", "size": "n/a", "control": "Wolf / Wolf Local (FFR)", "programs": "mfrr up/down , FFR", "trading": "Sympower BSP", "dataFlows": "utilize Sympower-Tieto-Statnett", "market": "Sympower - direct", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q1 2026", "risks": "", "confidence": "⚠️ Medium", "notes": "Paper, data centers feasible; no market stacking"}, {"tier": "1.0", "pid": "GR-CI-001", "geo": "Greece", "assetType": "C&I", "asset": "Crushers, coal mills, Raw mills, Cement mills, (Electric) furnace, Rolling mill", "size": "1-100+", "control": "Wolf & Digital support + Cloud", "programs": "mFRR Up / Down", "trading": "Sympower BSP (direct) & Optimus (indirect)", "dataFlows": "utilize Activation signals, Production plans (few of them), optimizer (per resource)", "market": "Sympower - direct\nOptimus - BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "S", "perMW": "", "strategic": "", "goLive": "Available", "risks": "", "confidence": "✅ High", "notes": ""}, {"tier": "1.0", "pid": "GR-CI-002", "geo": "Greece", "assetType": "C&I (soon to go live)", "asset": "Electric motor, Fan (HVAC), Plastic injection machines, recycling paper processing, Compressor, Marble processing machine, Spinning mill, Heat pump (first anallog)", "size": "0.1-10", "control": "Wolf + analog & digital support", "programs": "mFRR Up / Down", "trading": "Sympower BSP (direct) & Optimus (indirect)", "dataFlows": "utilize Activation signals, Production plans (few of them), optimizer (per resource)", "market": "Sympower - direct\nOptimus - BRP", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "M", "perMW": "", "strategic": "", "goLive": "Q4 2025", "risks": "", "confidence": "✅ High", "notes": "In PQ phase - 2 new multicustomer portfolios. Hard to get customers' operational schedules"}, {"tier": "pending investment case", "pid": "GR-BTMBESS-001", "geo": "Greece", "assetType": "ΒΤΜ BESS", "asset": "Small C&I", "size": "0.1-1", "control": "Cloud", "programs": "mFRR Up/Down\n\nSoC management on imbalance", "trading": "Sympower BSP", "dataFlows": "To add: C&I load Forecasts, Cloud2Cloud with Sunlight, BESS steering and measuring, site measurements", "market": "Sympower - direct", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "Q2 2026", "risks": "No electricity injection from the battery to the grid.\nNo electricity excretion higher than the grid connection limit.\nData ML team support for forecasts", "confidence": "⚠️ Medium", "notes": "Depends how fast Sunlight can implement our API. Depends if Sunlight already has SoC Management to start with."}, {"tier": "pending investment case", "pid": "GR-BTMBESS-002", "geo": "Greece", "assetType": "ΒΤΜ BESS", "asset": "Medium - Large C&I", "size": "0.5-100+", "control": "Enformer / Local", "programs": "mFRR Up/Down\n\nSoC management on imbalance", "trading": "Sympower BSP", "dataFlows": "To add: C&I load Forecasts, BESS steering and measuring, site measurements, SoC management, Maxguard config", "market": "Sympower - direct", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "Q1 2026", "risks": "No electricity injection from the battery to the grid.\nNo electricity excretion higher than the grid connection limit.\nData ML team support for forecasts", "confidence": "⚠️ Medium", "notes": "Need to install the first Enformer at Exalco and test that the set up works."}, {"tier": "3.0", "pid": "GR-BESS-001", "geo": "Greece", "assetType": "BESS", "asset": "??", "size": "1–100+", "control": "??", "programs": "Optimized FCR-D Up/Down, FCR-N, mFRR Up/Down\n\n(ID for SoC Management)", "trading": "Sympower", "dataFlows": "To add: ETRM Greece, Forecasts, market dynamics, greece strategies, etc.", "market": "??", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "H1 2027", "risks": "", "confidence": "", "notes": ""}, {"tier": "3.0", "pid": "GR-BESS-002", "geo": "Greece", "assetType": "BESS", "asset": "??", "size": "≤2", "control": "??", "programs": "Optimized FCR-D Up/Down, FCR-N, mFRR Up/Down, DA/ID (Asset backed)", "trading": "Sympower", "dataFlows": "To add: ETRM Greece, Forecasts, market dynamics, greece strategies, etc.", "market": "??", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "H1 2027", "risks": "", "confidence": "", "notes": ""}, {"tier": "", "pid": "", "geo": "Romania", "assetType": "BESS", "asset": "", "size": "1-100+", "control": "Wolf / Local", "programs": "", "trading": "TBD", "dataFlows": "Build Sympower- Romanian TSO integratoin", "market": "", "toCapacity": "", "infraRisk": "", "tradeRisk": "", "effort": "", "perMW": "", "strategic": "", "goLive": "TBD", "risks": "", "confidence": "⚠️ Medium", "notes": "Pending commercial information"}, {"tier": "X", "pid": "CZ-BESS-001", "geo": "Czechia", "assetType": "BESS", "asset": "??", "size": "3–100+", "control": "Enformer / Local", "programs": "aFRR", "trading": "Tedom", "dataFlows": "To add: Schedules, SoC statuses", "market": "Orgrez - Tedom", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "L", "perMW": "", "strategic": "", "goLive": "Q2 2026", "risks": "First time doing aFRR with FTM BESS. We rely on Orgrez to get market access. Need to access if Orgrez capabilities are enough for BESS aFRR and how easy it is to connect to their API", "confidence": "🧭 Low", "notes": "Market entry with limited volume expected. Send SoC data to TEDOM\nCZ Project was stopped in Q3 2025 due to low traction and difficulty to progress commercial conversations"}, {"tier": "X", "pid": "CZ-BESS-002", "geo": "Czechia", "assetType": "BESS", "asset": "??", "size": "3–100+", "control": "Enformer / Local", "programs": "aFRR, DA / ID (Commercial Flexibility)", "trading": "Tedom", "dataFlows": "To add: Schedules, SoC statuses, Bidding API", "market": "Orgrez - Tedom", "toCapacity": "N/A", "infraRisk": "", "tradeRisk": "", "effort": "L", "perMW": "", "strategic": "", "goLive": "Q4 2026", "risks": "First time doing Commercial Flexibility (imbalance managment). Need to agree with Tedom how this feature will look like.", "confidence": "🧭 Low", "notes": "Need to add automatic bid submission for DA and ID for SoC Management. Send SoC data to TEDOM\nCZ Project was stopped in Q3 2025 due to low traction and difficulty to progress commercial conversations"}];
+let CATALOG = FALLBACK.slice();
+// ----------------------------
+const norm=s=>(s||"").toLowerCase();
+const GEOS=["Finland","Sweden","Norway","Greece","Romania"];
+function fixGeo(g){g=(g||"").trim();return g.toLowerCase()==="finland"?"Finland":g;}
+function isActive(r){const t=(r.tier||"").toString();return t.startsWith("1")||t.startsWith("2")||t.startsWith("3");}
+function isEmerging(r){return !(r.tier||"").toString().trim() && !(r.pid||"").trim() && (r.geo||"").trim();}
+function tierClass(r){const t=(r.tier||"").toString();if(t.startsWith("1"))return"t1";if(t.startsWith("2"))return"t2";if(t.startsWith("3"))return"t3";if(isEmerging(r))return"emerg";return"parked";}
+function tierLabel(r){const t=(r.tier||"").toString();if(t.startsWith("1"))return"TIER 1";if(t.startsWith("2"))return"TIER 2";if(t.startsWith("3"))return"TIER 3";if(t.toLowerCase().startsWith("pending"))return"PENDING";if(isEmerging(r))return"EMERGING";return"PARKED";}
+function confColor(c){c=norm(c);if(c.includes("high"))return"var(--go)";if(c.includes("medium"))return"var(--cond)";if(c.includes("low"))return"var(--no)";return"var(--ink2)";}
+
+const PROGS=["FCR-D","FCR-N","mFRR","aFRR","FFR","Day Ahead / ID (wholesale)","Symbalance"];
+function progMatch(rp,sel){const p=norm(rp);return sel.every(s=>{
+  if(s==="Day Ahead / ID (wholesale)")return p.includes("day ahead")||p.includes("da/id")||p.includes("da /")||p.includes("intra-day")||p.includes("wholesale")||p.includes("xbid");
+  if(s==="mFRR")return p.includes("mfrr");if(s==="aFRR")return p.includes("afrr");if(s==="FCR-D")return p.includes("fcr-d");
+  if(s==="FCR-N")return p.includes("fcr-n");if(s==="FFR")return p.includes("ffr");if(s==="Symbalance")return p.includes("symbalance");return true;});}
+
+// ---------- data load ----------
+async function loadData(){
+  const el=document.getElementById("src");
+  if(CONFIG.catalogUrl){
+    try{const r=await fetch(CONFIG.catalogUrl,{cache:"no-store"});const j=await r.json();
+      if(Array.isArray(j)&&j.length){CATALOG=j;el.innerHTML="data: <b>live</b> from Google Sheet · "+new Date().toLocaleString();initAll();return;}}
+    catch(e){}
+    el.innerHTML="data: <b>snapshot</b> (live fetch failed)";
+  } else { el.innerHTML="data: <b>snapshot</b> · wire CONFIG.catalogUrl for live refresh"; }
+  initAll();
+}
+
+function cardHTML(r){const tc=tierClass(r);
+  return `<div class="pc ${tc}"><span class="tier ${tc}">${tierLabel(r)}</span><div class="pid">${r.pid||"(ID not yet assigned)"}</div>
+   <h3>${fixGeo(r.geo)} · ${r.assetType||""}${r.asset?" — "+r.asset:""}</h3>
+   <div class="kv"><b>Programs:</b> ${r.programs||"—"}</div>
+   <div class="kv"><b>Trading:</b> ${r.trading||"—"} · <b>Market access:</b> ${r.market||"—"}</div>
+   <div class="kv"><b>Size:</b> ${r.size||"—"} · <b>Go-live:</b> ${r.goLive||"—"}</div>
+   ${r.risks?`<div class="kv"><b>Constraints:</b> ${r.risks}</div>`:""}
+   <div class="conf" style="color:${confColor(r.confidence)}">Confidence: ${r.confidence||"—"}</div></div>`;}
+
+function verdictHTML(cls,mark,title,sub,notes,rows,aiNote){
+  let h=`<div class="verdict"><div class="vhead ${cls}"><div class="vmark">${mark}</div><div class="vtitle">${title}<small>${sub}</small></div></div><div class="vbody"><ul>${notes.map(n=>`<li>${n}</li>`).join("")}</ul>${aiNote?`<div class="ai-note">${aiNote}</div>`:""}</div></div>`;
+  if(rows&&rows.length)h+=`<p class="eyebrow">Matched offering${rows.length>1?"s":""}</p><div class="grid">${rows.map(cardHTML).join("")}</div>`;
+  return h;}
+
+// ---------- B: guided ----------
+function initGuided(){
+  const fGeo=document.getElementById("f-geo"),fAsset=document.getElementById("f-asset"),fProg=document.getElementById("f-prog");
+  fGeo.innerHTML="";GEOS.forEach(g=>fGeo.add(new Option(g,g)));
+  const ASSETS=[...new Set(CATALOG.map(r=>r.assetType).filter(Boolean))];
+  fAsset.innerHTML="";["Any",...ASSETS].forEach(a=>fAsset.add(new Option(a,a)));
+  let selProg=[];fProg.innerHTML="";
+  PROGS.forEach(p=>{const d=document.createElement("div");d.className="opt";d.textContent=p;
+    d.onclick=()=>{d.classList.toggle("on");selProg=selProg.includes(p)?selProg.filter(x=>x!==p):[...selProg,p];};fProg.appendChild(d);});
+  document.getElementById("go").onclick=()=>{
+    const geo=fGeo.value,asset=fAsset.value,brp=document.getElementById("f-brp").value;
+    let rows=CATALOG.filter(r=>fixGeo(r.geo)===geo);
+    if(asset!=="Any")rows=rows.filter(r=>r.assetType===asset);
+    if(selProg.length)rows=rows.filter(r=>progMatch(r.programs,selProg));
+    if(brp==="sympower")rows=rows.filter(r=>norm(r.trading).includes("sympower"));
+    if(brp==="partner")rows=rows.filter(r=>norm(r.trading).includes("partner")||norm(r.trading).includes("brp"));
+    const active=rows.filter(isActive),emerg=rows.filter(isEmerging),parked=rows.filter(r=>!isActive(r)&&!isEmerging(r));
+    let cls,mark,title,sub,notes=[];
+    if(active.length){const bt=Math.min(...active.map(r=>parseInt(r.tier)||9));
+      const low=active.some(r=>norm(r.confidence).includes("low")),med=active.some(r=>norm(r.confidence).includes("medium")),risk=active.some(r=>r.risks&&r.risks.trim());
+      if(bt===1&&!low&&!med){cls="go";mark="GO";title="Deliverable and on-strategy";sub="Matches a Tier 1 offering with high delivery confidence.";}
+      else if(low){cls="cond";mark="CHECK";title="Deliverable but low confidence";sub="A match exists but delivery confidence is Low — validate before committing.";}
+      else{cls="cond";mark="CHECK";title="Deliverable — conditions apply";sub=(bt>1?"Best match is Tier "+bt+" (below principal focus). ":"")+"Review constraints and go-live before committing.";}
+      notes.push(bt===1?"Strategic fit: Tier 1 (principal focus).":"Strategic fit: best match is Tier "+bt+" — below principal focus.");
+      if(risk)notes.push("Known constraints on matched offering(s) — see below.");
+      notes.push("Product-side read only. T&O capacity/guardrails still to be confirmed.");}
+    else if(emerg.length){cls="emerg";mark="EMERGING";title="Emerging market — not yet sellable";sub="We're exploring this, but there's no formal offering yet.";notes.push("Route the interest to Product. No commercial commitment yet.");}
+    else if(parked.length){cls="parked";mark="NO";title="Not a current product";sub="Only matches are parked, TaaS-dependent, or pending an investment case.";notes.push("Do not commit. Route to Product if strategically compelling.");}
+    else{cls="no";mark="NO";title="No match in the catalogue";sub="Nothing today fits this — it would be new development, off current strategy.";notes.push("Escalate to Product before committing. Loosen filters to see nearest offerings.");}
+    document.getElementById("result").innerHTML=verdictHTML(cls,mark,title,sub,notes,[...active,...emerg,...parked]);
+    document.getElementById("result").scrollIntoView({behavior:"smooth",block:"nearest"});};
+}
+
+// ---------- C: free text (grounded) ----------
+async function askAI(){
+  const text=document.getElementById("f-text").value.trim();
+  const btn=document.getElementById("go-ai"),res=document.getElementById("result");
+  if(!text){res.innerHTML=`<div class="empty">Describe the opportunity first.</div>`;return;}
+  btn.disabled=true;btn.textContent="Checking…";
+  const sys=`You are a lookup assistant for Sympower's commercial team. You ONLY use the provided product catalogue JSON. Never invent an offering, market, or capability that is not in the catalogue. Match the user's opportunity to catalogue rows by geo, asset type and market programs.
+Tier rules: tier "1.0/2.0/3.0" = active (1 is principal focus); "X" or "pending investment case" = NOT a current product; a row with empty tier AND empty pid = emerging (exploratory, not sellable).
+Return ONLY minified JSON, no markdown, with keys: verdict ("GO"|"CHECK"|"NO"|"EMERGING"), title (short), reasoning (array of short strings), matchedIds (array of pid strings that exist in the catalogue; use [] if none), offStrategy (boolean, true if no active/emerging match).
+CATALOGUE:\n`+JSON.stringify(CATALOG);
+  try{
+    let data;
+    if(CONFIG.qualifyUrl){
+      const r=await fetch(CONFIG.qualifyUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({system:sys,message:text})});
+      data=await r.json();
+    }else{
+      const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,system:sys,messages:[{role:"user",content:text}]})});
+      data=await r.json();
+    }
+    const txt=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("").replace(/```json|```/g,"").trim();
+    const out=JSON.parse(txt);
+    const clsMap={GO:"go",CHECK:"cond",NO:"no",EMERGING:"emerg"};
+    const rows=(out.matchedIds||[]).map(id=>CATALOG.find(r=>r.pid===id)).filter(Boolean);
+    const notes=(out.reasoning||[]).slice(0,5);
+    notes.push("Product-side read only. T&O capacity/guardrails still to be confirmed.");
+    res.innerHTML=verdictHTML(clsMap[out.verdict]||"cond",out.verdict||"CHECK",out.title||"Result",
+      out.offStrategy?"No active/emerging offering matched — treat as new development.":"Matched against the catalogue.",
+      notes,rows,"Interpreted by AI from your description and grounded in the catalogue. The offering cards below are the real catalogue rows — verify against them.");
+  }catch(e){
+    res.innerHTML=`<div class="empty">Couldn't parse a result. Try the Guided mode, or rephrase. (${(e&&e.message)||e})</div>`;
+  }finally{btn.disabled=false;btn.textContent="Ask";res.scrollIntoView({behavior:"smooth",block:"nearest"});}
+}
+
+// ---------- browse ----------
+let curGeo="Finland";
+function initBrowse(){
+  const chips=document.getElementById("geo-chips");chips.innerHTML="";
+  GEOS.forEach(g=>{const b=document.createElement("button");b.className="chip"+(g===curGeo?" on":"");b.textContent=g;
+    b.onclick=()=>{curGeo=g;[...chips.children].forEach(c=>c.classList.toggle("on",c.textContent===g));renderBrowse();};chips.appendChild(b);});
+  renderBrowse();
+}
+function renderBrowse(){
+  const rows=CATALOG.filter(r=>fixGeo(r.geo)===curGeo);
+  const active=rows.filter(isActive).sort((a,b)=>(parseInt(a.tier)||9)-(parseInt(b.tier)||9));
+  const emerg=rows.filter(isEmerging),parked=rows.filter(r=>!isActive(r)&&!isEmerging(r));
+  let h="";
+  if(active.length)h+=`<div class="grid">${active.map(cardHTML).join("")}</div>`;
+  if(emerg.length)h+=`<p class="eyebrow" style="margin-top:24px">Emerging · under exploration</p><div class="grid">${emerg.map(cardHTML).join("")}</div>`;
+  if(parked.length)h+=`<p class="eyebrow" style="margin-top:24px">Parked · not current products</p><div class="grid">${parked.map(cardHTML).join("")}</div>`;
+  if(!rows.length)h=`<div class="empty">No catalogue entries for ${curGeo}.</div>`;
+  document.getElementById("browse-grid").innerHTML=h;
+}
+
+function initAll(){initGuided();initBrowse();}
+document.getElementById("go-ai").onclick=askAI;
+document.querySelectorAll(".eg a").forEach(a=>a.onclick=()=>{document.getElementById("f-text").value=a.dataset.eg;});
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".seg button").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+  document.getElementById("guided").style.display=b.dataset.sub==="guided"?"":"none";
+  document.getElementById("describe").style.display=b.dataset.sub==="describe"?"":"none";});
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));t.classList.add("on");
+  document.getElementById("check").style.display=t.dataset.mode==="check"?"":"none";
+  document.getElementById("browse").style.display=t.dataset.mode==="browse"?"":"none";});
+loadData();
+</script>
+</body></html>

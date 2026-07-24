@@ -1,5 +1,7 @@
-const CONFIG = {
-  catalogUrl: "/api/catalog",
-  qualifyUrl: "/api/qualify",
-  snapshotDate: "catalogue snapshot"
-};
+{
+  "name": "product-qualifier",
+  "version": "1.0.0",
+  "dependencies": {
+    "google-auth-library": "^9.0.0"
+  }
+}
